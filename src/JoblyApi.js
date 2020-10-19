@@ -31,23 +31,16 @@ class JoblyApi {
       return res.companies;
     }
 
-    //     static async getCompanies(search) {
-    //       if (search === undefined) {
-    //   let res = await this.request("companies");
-    //   console.log("SEARCH IS UNDEFINED");
-    //   console.log("RESULTS", res);
-    //   return res.companies;
-    //       } else {
-    //   let res = await this.request("companies", { search });
-    //   return res.companies;
-    //       }
-
-    // }
-
     static async getCompany(handle) {
       let res = await this.request(`companies/${handle}`);
       return res.company;
     }
+
+    static async getJobs(search) {
+      let res = await this.request("jobs", { search });
+    return res.jobs;
+    }
+    
   }
 
   export default JoblyApi;
