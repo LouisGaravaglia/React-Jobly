@@ -6,8 +6,10 @@ import Jobs from "./Jobs";
 import CompanyDetails from "./CompanyDetails";
 import Register from "./Register";
 import Login from "./Login";
+import Logout from "./Logout";
 
 const Routes = () => {
+    
 
     return (
         <>
@@ -20,6 +22,7 @@ const Routes = () => {
             <Route exact path="/jobs/:"><Test/></Route>
             <Route exact path="/login"><Login/></Route>
             <Route exact path="/register"><Register/></Route>
+            <Route exact path="/logout"><Logout /></Route>
             <Route><p>Hmmm. I can't seem to find what you want.</p></Route>
         </Switch>
         </>

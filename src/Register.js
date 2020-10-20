@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import JoblyApi from "./JoblyApi";
+import UserContext from "./UserContext";
 
 
 const Register = () => {
+    const {setToken} = useContext(UserContext);
+
     const INITIAL_VALUE = {
         username:"",
         password:"",
@@ -11,6 +14,7 @@ const Register = () => {
         email:"",
         photo_url:""
     }
+
     const [formData, setFormData] = useState(INITIAL_VALUE);
 
     const handleChange = (e) => {
@@ -31,6 +35,7 @@ const Register = () => {
             console.log(e);
         }
             localStorage.setItem("jobly-token", token);
+            setToken(token);
 
 
     }
