@@ -1,9 +1,11 @@
 import React, { useState, useContext } from "react";
 import JoblyApi from "./JoblyApi";
+import { useHistory } from "react-router-dom";
 import UserContext from "./UserContext";
 
 
 const Register = () => {
+    const history = useHistory();
     const {setToken} = useContext(UserContext);
 
     const INITIAL_VALUE = {
@@ -36,7 +38,7 @@ const Register = () => {
         }
             localStorage.setItem("jobly-token", token);
             setToken(token);
-
+            history.push("/jobs");
 
     }
 

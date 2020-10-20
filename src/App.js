@@ -26,6 +26,7 @@ function App() {
   const handleLogOut = () => {
     setCurrentUser(null);
     setToken(null);
+    localStorage.removeItem("jobly-token");
   };
 
   return (
