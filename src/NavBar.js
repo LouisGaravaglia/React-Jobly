@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import {NavLink} from "react-router-dom";
+import UserContext from "./UserContext";
 
-const NavBar = () => {
-    const isLoggedIn = localStorage.getItem("jobly-token");
+const NavBar = ({handleLogOut}) => {
+    const { currentUser } = useContext(UserContext);
 
     const loggedInNav = () => {
         return (
             <>
             <NavLink exact to="/profile">Profile</NavLink>
-            <NavLink exact to="/logout">Logout</NavLink>
+            <NavLink exact to="/" onClick={handleLogOut}>Logout</NavLink>
             </>
         )
     }
@@ -26,7 +27,7 @@ const NavBar = () => {
         <NavLink exact to="/">Jobly</NavLink>
         <NavLink exact to="/companies">Companies</NavLink>
         <NavLink exact to="/jobs">Jobs</NavLink>
-        { isLoggedIn ? loggedInNav() : publicNav() }
+        { currentUser ? loggedInNav() : publicNav() }
         </>
     )
 }
