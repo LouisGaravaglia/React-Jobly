@@ -36,10 +36,11 @@ const Register = () => {
         } catch(e) {
             console.log(e);
         }
+        if (token) {
             localStorage.setItem("jobly-token", token);
             setToken(token);
             history.push("/jobs");
-
+        }
     }
 
 

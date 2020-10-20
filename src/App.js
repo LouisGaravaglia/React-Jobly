@@ -8,8 +8,9 @@ import UserContext from "./UserContext";
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("jobly-token"));
+  const [infoLoaded, setInfoLoaded] = useState(false);
   const [currentUser ,setCurrentUser] = useState(null);
-
+    
   useEffect(() => {
     const getCurrentUser = async () => {
       try {
@@ -18,7 +19,9 @@ function App() {
         setCurrentUser(currentUser);
       } catch(e) {
         setCurrentUser(null);
+        setInfoLoaded(false);
       }
+      setInfoLoaded(true);
     };
     getCurrentUser();
   }, [token]);
@@ -28,6 +31,12 @@ function App() {
     setToken(null);
     localStorage.removeItem("jobly-token");
   };
+
+  if (!infoLoaded) {
+    return (
+      <p>Content is loading!</p>
+    )
+  }
 
   return (
     <UserContext.Provider value={{currentUser, setCurrentUser, setToken}}>
