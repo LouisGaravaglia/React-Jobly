@@ -6,6 +6,7 @@ import Jobs from "./Jobs";
 import CompanyDetails from "./CompanyDetails";
 import Register from "./Register";
 import Login from "./Login";
+import Home from "./Home";
 
 const Routes = () => {
 
@@ -13,7 +14,7 @@ const Routes = () => {
     return (
         <>
         <Switch>
-            <Route exact path="/"><Test/></Route>
+            <Route exact path="/"><Home/></Route>
             <Route exact path="/companies"><Companies/></Route>
             <Route exact path="/companies/:handle"><CompanyDetails/></Route>
             <Route exact path="/jobs"><Jobs/></Route>
