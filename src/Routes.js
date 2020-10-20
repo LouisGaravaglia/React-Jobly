@@ -7,6 +7,7 @@ import CompanyDetails from "./CompanyDetails";
 import Register from "./Register";
 import Login from "./Login";
 import Home from "./Home";
+import Profile from "./Profile";
 
 const Routes = () => {
 
@@ -18,7 +19,7 @@ const Routes = () => {
             <Route exact path="/companies"><Companies/></Route>
             <Route exact path="/companies/:handle"><CompanyDetails/></Route>
             <Route exact path="/jobs"><Jobs/></Route>
-            <Route exact path="/profile"><Test/></Route>
+            <Route exact path="/profile"><Profile/></Route>
             <Route exact path="/jobs/:"><Test/></Route>
             <Route exact path="/login"><Login/></Route>
             <Route exact path="/register"><Register/></Route>
