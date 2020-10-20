@@ -4,6 +4,8 @@ import Test from "./Test";
 import Companies from "./Companies";
 import Jobs from "./Jobs";
 import CompanyDetails from "./CompanyDetails";
+import Register from "./Register";
+import Login from "./Login";
 
 const Routes = () => {
 
@@ -16,7 +18,8 @@ const Routes = () => {
             <Route exact path="/jobs"><Jobs/></Route>
             <Route exact path="/profile"><Test/></Route>
             <Route exact path="/jobs/:"><Test/></Route>
-            <Route exact path="/login"><Test/></Route>
+            <Route exact path="/login"><Login/></Route>
+            <Route exact path="/register"><Register/></Route>
             <Route><p>Hmmm. I can't seem to find what you want.</p></Route>
         </Switch>
         </>
