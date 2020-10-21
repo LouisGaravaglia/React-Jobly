@@ -19,10 +19,10 @@ function App() {
         setCurrentUser(currentUser);
       } catch(e) {
         setCurrentUser(null);
-        setInfoLoaded(false);
       }
       setInfoLoaded(true);
     };
+    setInfoLoaded(false);
     getCurrentUser();
   }, [token]);
 
