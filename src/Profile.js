@@ -78,6 +78,7 @@ const Profile = () => {
                placeholder="first_name"
                onChange={handleChange}
            />
+        <div className="input-group">  
         <label>Last Name: </label>
            <input 
                type="text"
@@ -86,6 +87,7 @@ const Profile = () => {
                placeholder="last_name"
                onChange={handleChange}
            />
+           </div> 
         <label>Email: </label>
            <input 
                type="text"
