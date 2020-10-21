@@ -20,16 +20,16 @@ const NavBar = ({handleLogOut}) => {
     const publicNav = () => {
         return (
             <>
-                <NavLink exact to="/login">Login</NavLink>
+                <NavLink exact to="/login" className="NavLink">Login</NavLink>
                 <NavLink exact to="/register">Register</NavLink>
             </>
         )
     }
     return (
-        <>
+        <div className="NavBar">
             <NavLink exact to="/">Jobly</NavLink>
             { currentUser ? loggedInNav() : publicNav() }
-        </>
+        </div>
     )
 }
 

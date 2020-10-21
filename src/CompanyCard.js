@@ -1,12 +1,13 @@
 import React from "react";
+import './App.css';
 
 const CompanyCard = ({name, description, logo}) => {
 
     return (
-        <div>
-        <p>{name}</p>
+        <div className="CompanyCard has-text-primary">
+        <h3>{name}</h3>
         <p>{description}</p>
-        <p>{logo}</p>
+        <img src={logo}/>
         </div>
     ) 
 }
