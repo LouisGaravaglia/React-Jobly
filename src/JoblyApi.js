@@ -35,6 +35,7 @@ class JoblyApi {
 
     static async getJobs(search) {
       let res = await this.request("jobs", { search });
+      console.log("geJob: ", res);
     return res.jobs;
     }
 
@@ -60,6 +61,12 @@ class JoblyApi {
       let res = await this.request(`users/${username}`, data, "patch");
       console.log("updateUser RESPONSE", res);
     return res.user;
+    }
+
+    static async applyToJob(id) {
+      let res = await this.request(`jobs/${id}/apply`, {}, "post");
+      console.log("made a call to applyToJob", res);
+    return res.message;
     }
 
     

@@ -1,15 +1,11 @@
 import React from "react";
+import JobCard from "./JobCard";
 
-
-const Job = ({title, salary, equity}) => {
+const Job = ({idx, apply = () => null, item}) => {
 
 
     return (
-        <div>
-            <p>Job Title: {title}</p>
-            <p>Job Salary: {salary}</p>
-            <p>Job Equity: {equity}</p>
-        </div>
+        <JobCard item={item} handleApply={() => apply(idx)} />
     )
 }
 
